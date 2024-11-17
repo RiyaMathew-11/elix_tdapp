@@ -76,6 +76,7 @@ defmodule ElixTdappWeb do
 
       # Include general helpers for rendering HTML
       unquote(html_helpers())
+      import ElixTdappWeb.Components.TodoList
     end
   end
 
