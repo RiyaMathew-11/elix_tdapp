@@ -1,18 +1,19 @@
+# lib/elix_tdapp/todos/todo.ex
 defmodule ElixTdapp.Todos.Todo do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "todos" do
-    field :done, :boolean, default: false
     field :title, :string
+    field :done, :boolean, default: false
 
-    timestamps(type: :utc_datetime)
+    timestamps()
   end
 
   @doc false
   def changeset(todo, attrs) do
     todo
-    |> cast(attrs, [:id, :title, :done])
-    |> validate_required([:id, :title, :done])
+    |> cast(attrs, [:title, :done])
+    |> validate_required([:title])  # Remove :done from required since it has a default
   end
 end
