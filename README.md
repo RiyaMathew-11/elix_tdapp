@@ -1,4 +1,11 @@
-# ElixTdapp
+# Elix-ToDos
+
+A simple ToDo-list app created using Phoenix for learning purposes. Phoenix is a web framework for Elixir.
+
+### Demo
+![Demo for Elix ToDos](/assets/media/demo.gif)
+
+---
 
 To start your Phoenix server:
 

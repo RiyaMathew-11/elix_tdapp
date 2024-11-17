@@ -2,6 +2,7 @@ defmodule ElixTdappWeb.TodoLive do
   use ElixTdappWeb, :live_view
   alias ElixTdapp.Todos
   import ElixTdappWeb.Components.TodoList
+  require Logger
 
   @impl true
   def mount(_params, _session, socket) do
@@ -10,7 +11,7 @@ defmodule ElixTdappWeb.TodoLive do
   end
 
   @impl true
-  def handle_event("add-todo", %{"todo" => %{"title" => title}} = params, socket) do
+  def handle_event("add-todo", %{"todo" => %{"title" => title}} = _params, socket) do
 
     case Todos.create_todo(%{title: title, done: false}) do
       {:ok, _todo} ->
